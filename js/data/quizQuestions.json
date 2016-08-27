@@ -1,0 +1,23 @@
+[
+	{
+		"question": "Who wrote 1984?",
+		"answers": ["George Orson Welles", "Kurt Vonnegut", "George Orwell", "Upton Sinclair"],
+		"correct": "George Orwell"
+	},{
+		"question": "Which state does not border a Great Lake?",
+		"answers": ["Illinois", "Michigan", "New York", "Pennsylvania", "All of these states border a Great Lake."],
+		"correct": "All of these states border a Great Lake."
+	},{
+		"question": "What is the capital of Texas?",
+		"answers": ["San Antonio", "Dallas", "Austin", "Houston"],
+		"correct": "Austin"
+	},{
+		"question": "Where do the Dallas Cowboys play?",
+		"answers": ["Soldier Field", "AT&T Stadium", "Lambeau Field", "FedExField"],
+		"correct": "AT&T Stadium"
+	},{
+		"question": "Which of these is a legume?",
+		"answers": ["Walnut", "Almond", "Cashew", "Peanut"],
+		"correct": "Peanut"
+	}
+]
