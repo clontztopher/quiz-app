@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Quiz App</title>
+        <!--CSS-->
+        <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Raleway:300,600,900'>
+        <link rel="stylesheet" type="text/css" href="node_modules/normalize.css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/quiz.css">
+  </head>
+  
+  <body id="quiz-app">
+    <!-- Full Container -->
+    <div class="container">
+      <div class="row" id="main">
+        <div class="col-md-12">
+          <h1 id="h1-quiz" class="pull-left">Quiz</h1>
+          <div id="buttons">
+              <!-- button output -->
+          </div>
+        </div>
+      </div>
+      <div id="message" class="row">
+        <div id="message-wrap" class="col-xs-12">
+          <!-- message output goes here -->
+        </div>
+      </div>
+        <div class="row" id="main-output">
+          <!-- main output goes here -->
+        </div>
+    </div>
+
+    <!--************ TEMPLATES **********-->
+
+    <!-- Button Template -->
+    <script id="button-template" type="text/x-handlebars-template">
+      <div id="button-container">
+        {{#if control}}
+          <button class="next pull-right" data-control="next">
+              Next
+          </button>
+          <button class="prev pull-right" data-control="prev">
+              Previous
+          </button>
+        {{else}}
+          <button class="reset pull-right" data-control="reset">
+              Reset
+          </button>
+        {{/if}}
+      </div>
+    </script>
+
+    <!--Question Template-->
+    <script id="question-template" type="text/x-handlebars-template">
+        <div class="col-md-12 template">
+             <h2>{{question}}</h2>
+             <ul class="list-unstyled answers">
+              {{#each answers}}
+                <li class="answer
+                  {{#checkChoice ../choice this}}chosen{{/checkChoice}}">
+                  {{this}}
+                </li>
+              {{/each}}
+            </ul>
+        </div>
+    </script>
+
+    <!-- Message Template -->
+    <script id="message-template" type="text/x-handlebars-template">
+      <div id="message-wrap" class="col-xs-12">
+        <p>{{text}}</p>
+      </div>
+    </script>
+
+    <!--Result Template-->
+    <script id="results-template" type="text/x-handlebars-template">
+        <div class="col-md-12 template">
+            <h2>You scored {{score}} out of {{total}}</h2>
+        </div>
+    </script>
+    
+    <!--Scripts-->
+    <script src="lib/jquery-2.2.4.min.js"></script>
+    <script src="js/iterator.js"></script>
+    <script src="lib/event-emitter-temp.js"></script>
+    <script src="lib/handlebars.min.js"></script>
+    <script src="js/quiz-views.js"></script>
+    <script src="js/quiz-app.js"></script>
+  </body>
+</html>
